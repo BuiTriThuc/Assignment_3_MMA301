@@ -12,14 +12,9 @@ import HomeScreenData from "../data/HomeScreenData";
 
 export default function HomeScreen({ navigation }) {
   const windowWidth = Dimensions.get("window").width;
-  const [hoveredId, setHoveredId] = useState(null);
 
-  const handlePressIn = (id) => {
-    setHoveredId(id);
-  };
-
-  const handlePressOut = () => {
-    setHoveredId(null);
+  const handlePress = (product) => {
+    navigation.navigate("DetailScreen", { product });
   };
 
   return (
@@ -29,20 +24,11 @@ export default function HomeScreen({ navigation }) {
           <TouchableOpacity
             key={product.id}
             style={[styles.productContainer, { width: windowWidth / 2 - 20 }]}
-            onPress={() => navigation.navigate("DetailScreen")}
-            onPressIn={() => handlePressIn(product.id)}
-            onPressOut={handlePressOut}
+            onPress={() => handlePress(product)}
             activeOpacity={0.7}
           >
             <Image source={product.image} style={styles.image} />
-            <Text
-              style={[
-                styles.name,
-                hoveredId === product.id && styles.hoveredName,
-              ]}
-            >
-              {product.name}
-            </Text>
+            <Text style={styles.name}>{product.name}</Text>
           </TouchableOpacity>
         ))}
       </View>
@@ -75,8 +61,5 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 10,
-  },
-  hoveredName: {
-    color: "red",
   },
 });

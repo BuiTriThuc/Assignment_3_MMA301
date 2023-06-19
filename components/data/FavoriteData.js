@@ -1,7 +1,7 @@
 const FavoriteData = [
   {
     id: 1,
-    name: "Phi Diep",
+    name: "Phi Điệp",
     image: {
       uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxo-7jOhTycvc7Wc6NRjyP_USZRgyyLVLsVQ&usqp=CAU",
     },

@@ -41,10 +41,10 @@ const styles = StyleSheet.create({
 
 const triggerStyles = {
   triggerText: {
-    color: "black", // Set the color of the text
+    color: "black",
   },
   triggerWrapper: {
-    padding: 5, // Add padding to adjust the trigger's size
+    padding: 5,
   },
 };
 

@@ -5,7 +5,7 @@ import DetailScreen from "../detail/DetailScreen";
 
 const Stack = createNativeStackNavigator();
 
-export default function Home() {
+export default function StackNavigator() {
   return (
     <Stack.Navigator
       screenOptions={{

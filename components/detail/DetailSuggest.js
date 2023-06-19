@@ -1,27 +1,33 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, Dimensions } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  Dimensions,
+  TouchableOpacity,
+} from "react-native";
 import detailSuggest from "../data/DetailSuggestData";
-
 const DetailSuggest = ({ navigation }) => {
   const windowWidth = Dimensions.get("window").width;
-  const itemWidth = windowWidth / 2 - 20; // Width calculation for each item
-
+  const handlePress = (product) => {
+    navigation.navigate("DetailScreen", { product });
+  };
   return (
     <View style={styles.container}>
-      {detailSuggest.map((detailSuggest) => (
-        <View
-          key={detailSuggest.id}
-          style={[styles.productSuggestContainer, { width: itemWidth }]}
-        >
-          <Image source={detailSuggest.image} style={styles.image} />
-          <Text
-            onPress={() => navigation.navigate("DetailScreen")}
-            style={styles.name}
+      <View style={styles.container}>
+        {detailSuggest.map((product) => (
+          <TouchableOpacity
+            key={product.id}
+            style={[styles.productContainer, { width: windowWidth / 2 - 20 }]}
+            onPress={() => handlePress(product)}
+            activeOpacity={0.7}
           >
-            {detailSuggest.name}
-          </Text>
-        </View>
-      ))}
+            <Image source={product.image} style={styles.image} />
+            <Text style={styles.name}>{product.name}</Text>
+          </TouchableOpacity>
+        ))}
+      </View>
     </View>
   );
 };
