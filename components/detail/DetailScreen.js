@@ -42,7 +42,7 @@ const ProductDetail = ({ navigation, route }) => {
           </View>
 
           <Text
-            onPress={() => navigation.navigate("Home")}
+            onPress={() => navigation.navigate("Thuc")}
             style={styles.detailTitle}
           >
             Hoa tương tự
@@ -56,8 +56,6 @@ const ProductDetail = ({ navigation, route }) => {
     </ScrollView>
   );
 };
-
-// Stylesheet
 
 const styles = StyleSheet.create({
   container: {
@@ -102,41 +100,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 200,
     marginBottom: 10,
-  },
-  container: {
-    flex: 1,
-    padding: 10,
-    backgroundColor: "#FCF8EE",
-  },
-  productContainer: {
-    marginBottom: 20,
-  },
-  image: {
-    width: "100%",
-    height: 500,
-    marginBottom: 10,
-  },
-  name: {
-    fontSize: 30,
-    fontWeight: "bold",
-    marginBottom: 10,
-  },
-
-  detailTitle: {
-    backgroundColor: "white",
-    borderWidth: 0.2,
-    borderColor: "black",
-    textAlign: "center",
-    fontWeight: "bold",
-    fontSize: 20,
-    height: 30,
-    color: "#F9A529",
-    marginBottom: 10,
-  },
-  description: {
-    fontSize: 18,
-    textAlign: "justify",
-    marginBottom: 10,
+    borderRadius: 10,
   },
 });
 

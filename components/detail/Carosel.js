@@ -2,7 +2,7 @@ import React from "react";
 import Carousel, { PaginationLight } from "react-native-x-carousel";
 import { StyleSheet, View, Text, Image, Dimensions } from "react-native";
 const { width } = Dimensions.get("window");
-import DATA from "../data/CaroselData";
+import CaroselData from "../data/CaroselData";
 
 const Carosel = () => {
   const renderItem = (data) => (
@@ -24,13 +24,15 @@ const Carosel = () => {
       <Carousel
         pagination={PaginationLight}
         renderItem={renderItem}
-        data={DATA}
+        data={CaroselData}
         loop
         autoplay
+        autoplayInterval={1000}
       />
     </View>
   );
 };
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -68,4 +70,5 @@ const styles = StyleSheet.create({
     paddingBottom: 2,
   },
 });
+
 export default Carosel;
