@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, ScrollView, Image, StyleSheet } from "react-native";
 import DetailSuggest from "../detail/DetailSuggest";
-import CarouselData from "../data/CaroselData";
+import Carosel from "../detail/Carosel";
 import DropDownMenu from "./DropDownMenu";
 const ProductDetail = ({ navigation, route }) => {
   const { product } = route.params;
@@ -10,7 +10,7 @@ const ProductDetail = ({ navigation, route }) => {
     <ScrollView>
       <View style={styles.container}>
         <View style={[styles.productContainer]}>
-          <CarouselData />
+          <Carosel />
           <View style={styles.DropDownMenu}>
             <Text style={styles.name}>{product.name} </Text>
             <DropDownMenu />
@@ -33,13 +33,12 @@ const ProductDetail = ({ navigation, route }) => {
           <View>
             <Text style={{ fontWeight: "bold", fontSize: 20 }}>Lá lan:</Text>
             <Text style={styles.description}>{product.descriptionLa}</Text>
-
-            <Image style={styles.imgdes} source={require("../img/la.jpg")} />
+            <Image style={styles.imgdes} source={product.imgLa} />
           </View>
           <View>
             <Text style={{ fontWeight: "bold", fontSize: 20 }}>Hoa lan:</Text>
             <Text style={styles.description}>{product.descriptionHoa}</Text>
-            <Image style={styles.imgdes} source={require("../img/hoa.jpg")} />
+            <Image style={styles.imgdes} source={product.imgHoa} />
           </View>
 
           <Text
@@ -102,7 +101,7 @@ const styles = StyleSheet.create({
   imgdes: {
     width: "100%",
     height: 200,
-    marginBottom: 20,
+    marginBottom: 10,
   },
   container: {
     flex: 1,
@@ -137,7 +136,7 @@ const styles = StyleSheet.create({
   description: {
     fontSize: 18,
     textAlign: "justify",
-    marginBottom: 20,
+    marginBottom: 10,
   },
 });
 

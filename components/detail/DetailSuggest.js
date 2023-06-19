@@ -15,19 +15,17 @@ const DetailSuggest = ({ navigation }) => {
   };
   return (
     <View style={styles.container}>
-      <View style={styles.container}>
-        {detailSuggest.map((product) => (
-          <TouchableOpacity
-            key={product.id}
-            style={[styles.productContainer, { width: windowWidth / 2 - 20 }]}
-            onPress={() => handlePress(product)}
-            activeOpacity={0.7}
-          >
-            <Image source={product.image} style={styles.image} />
-            <Text style={styles.name}>{product.name}</Text>
-          </TouchableOpacity>
-        ))}
-      </View>
+      {detailSuggest.map((product) => (
+        <TouchableOpacity
+          key={product.id}
+          style={[styles.productContainer, { width: windowWidth / 2 - 20 }]}
+          onPress={() => handlePress(product)}
+          activeOpacity={0.7}
+        >
+          <Image source={product.image} style={styles.image} />
+          <Text style={styles.name}>{product.name}</Text>
+        </TouchableOpacity>
+      ))}
     </View>
   );
 };
@@ -40,13 +38,12 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     backgroundColor: "#FCF8EE",
   },
-  productSuggestContainer: {
+  productContainer: {
+    marginBottom: 20,
     backgroundColor: "#ffff",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 20,
-    marginTop: -10,
   },
   image: {
     width: "100%",

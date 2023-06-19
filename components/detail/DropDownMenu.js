@@ -1,32 +1,25 @@
-import React from "react";
-import { Text, View, StyleSheet } from "react-native";
-import {
-  MenuProvider,
-  Menu,
-  MenuOptions,
-  MenuOption,
-  MenuTrigger,
-} from "react-native-popup-menu";
-import { Ionicons } from "@expo/vector-icons";
+import React, { useState } from "react";
+import { View, Switch, StyleSheet, Alert } from "react-native";
 
 const DropDownMenu = () => {
-  return (
-    <MenuProvider style={styles.container}>
-      <View>
-        <Menu>
-          <MenuTrigger customStyles={triggerStyles}>
-            <Ionicons name="ellipsis-vertical" size={24} color="black" />
-          </MenuTrigger>
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => {
+    setIsEnabled((previousState) => !previousState);
+    if (!isEnabled) {
+      Alert.alert("Yêu thích", "Đã thêm vào danh sách yêu thích");
+    }
+  };
 
-          <MenuOptions>
-            <MenuOption
-              onSelect={() => alert(`Đã lưu vào danh sách yêu thích`)}
-              text="Save"
-            />
-          </MenuOptions>
-        </Menu>
-      </View>
-    </MenuProvider>
+  return (
+    <View style={styles.container}>
+      <Switch
+        trackColor={{ false: "#767577", true: "#F03B39" }}
+        thumbColor={isEnabled ? "#F03B39" : "#444654"}
+        ios_backgroundColor="#3e3e3e"
+        onValueChange={toggleSwitch}
+        value={isEnabled}
+      />
+    </View>
   );
 };
 
@@ -35,17 +28,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#FCF8EE",
   },
 });
-
-const triggerStyles = {
-  triggerText: {
-    color: "black",
-  },
-  triggerWrapper: {
-    padding: 5,
-  },
-};
 
 export default DropDownMenu;
