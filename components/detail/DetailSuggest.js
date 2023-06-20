@@ -7,15 +7,16 @@ import {
   Dimensions,
   TouchableOpacity,
 } from "react-native";
-import detailSuggest from "../data/DetailSuggestData";
+import HomeScreenData from "../data/HomeScreenData";
 const DetailSuggest = ({ navigation }) => {
   const windowWidth = Dimensions.get("window").width;
   const handlePress = (product) => {
     navigation.navigate("DetailScreen", { product });
   };
+  const limit = 4;
   return (
     <View style={styles.container}>
-      {detailSuggest.map((product) => (
+      {HomeScreenData.slice(0, limit).map((product) => (
         <TouchableOpacity
           key={product.id}
           style={[styles.productContainer, { width: windowWidth / 2 - 20 }]}

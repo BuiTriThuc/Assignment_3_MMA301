@@ -6,7 +6,9 @@ const SwitchAdd = () => {
   const toggleSwitch = () => {
     setIsEnabled((previousState) => !previousState);
     if (!isEnabled) {
-      Alert.alert("Yêu thích", "Đã thêm vào danh sách yêu thích");
+      Alert.alert("Thích", "Đã thêm vào danh sách yêu thích");
+    } else {
+      Alert.alert("!Thích", "Đã xóa khỏi danh sách yêu thích");
     }
   };
 
