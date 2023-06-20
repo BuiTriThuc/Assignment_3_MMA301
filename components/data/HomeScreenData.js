@@ -1,6 +1,6 @@
 const HomeScreenData = [
   {
-    id: 1,
+    id: "1",
     name: "Hồ Điệp",
     image: {
       uri: "https://hoalan360.com/uploads/file/lan-ho-diep-mini-trang-tim.jpg",
@@ -26,7 +26,7 @@ const HomeScreenData = [
     favorite: false,
   },
   {
-    id: 2,
+    id: "2",
     name: "Cattleya",
     image: {
       uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Cattleya_mendelii_Orchi_143.jpg/1200px-Cattleya_mendelii_Orchi_143.jpg",
@@ -51,7 +51,7 @@ const HomeScreenData = [
     favorite: false,
   },
   {
-    id: 3,
+    id: "3",
     name: "Vũ Nữ",
     image: {
       uri: "https://flowershop.com.vn/wp-content/uploads/2020/09/y-nghia-hoa-lan-vu-nu-5-min.jpg",
@@ -77,7 +77,7 @@ const HomeScreenData = [
     favorite: false,
   },
   {
-    id: 4,
+    id: "4",
     name: "Phi Điệp",
     image: {
       uri: "https://product.hstatic.net/200000313485/product/phi_diep_bet_mat_nhung_tran_vien_7717967ec5eb4debb473116982329bd2_master.jpg",
@@ -103,7 +103,7 @@ const HomeScreenData = [
   },
 
   {
-    id: 5,
+    id: "5",
     name: "Mokara",
     image: {
       uri: "https://sfarm.vn/wp-content/uploads/2015/01/hoa-phong-lan-mokara-4.jpg",
@@ -128,7 +128,7 @@ const HomeScreenData = [
     favorite: false,
   },
   {
-    id: 6,
+    id: "6",
     name: "Lan kiếm",
     image: {
       uri: "https://vuonlan.com.vn/wp-content/uploads/2023/06/hoa-lan-kiem-rung-806.jpg",

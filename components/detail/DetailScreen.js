@@ -13,7 +13,7 @@ const DetailScreen = ({ navigation, route }) => {
           <Carosel />
           <View style={styles.DropDownMenu}>
             <Text style={styles.name}>{product.name} </Text>
-            <SwitchAdd />
+            <SwitchAdd product={product} />
           </View>
 
           <Text style={styles.detailTitle}> Mô tả hoa</Text>
