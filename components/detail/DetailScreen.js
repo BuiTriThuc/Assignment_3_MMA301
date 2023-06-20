@@ -1,19 +1,32 @@
 import React from "react";
-import { View, Text, ScrollView, Image, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  Image,
+  StyleSheet,
+  Button,
+} from "react-native";
 import DetailSuggest from "../detail/DetailSuggest";
 import Carosel from "../detail/Carosel";
 import SwitchAdd from "./SwitchAdd";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 const DetailScreen = ({ navigation, route }) => {
   const { product } = route.params;
+
+  clearAsyncStorage = async () => {
+    AsyncStorage.clear();
+  };
 
   return (
     <ScrollView>
       <View style={styles.container}>
         <View style={[styles.productContainer]}>
           <Carosel />
+          <Button onPress={this.clearAsyncStorage} title="Thuc clasdsadsklj" />
           <View style={styles.DropDownMenu}>
             <Text style={styles.name}>{product.name} </Text>
-            <SwitchAdd />
+            <SwitchAdd product={product} />
           </View>
 
           <Text style={styles.detailTitle}> Mô tả hoa</Text>
