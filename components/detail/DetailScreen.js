@@ -2,8 +2,8 @@ import React from "react";
 import { View, Text, ScrollView, Image, StyleSheet } from "react-native";
 import DetailSuggest from "../detail/DetailSuggest";
 import Carosel from "../detail/Carosel";
-import DropDownMenu from "./DropDownMenu";
-const ProductDetail = ({ navigation, route }) => {
+import SwitchAdd from "./SwitchAdd";
+const DetailScreen = ({ navigation, route }) => {
   const { product } = route.params;
 
   return (
@@ -13,7 +13,7 @@ const ProductDetail = ({ navigation, route }) => {
           <Carosel />
           <View style={styles.DropDownMenu}>
             <Text style={styles.name}>{product.name} </Text>
-            <DropDownMenu />
+            <SwitchAdd />
           </View>
 
           <Text style={styles.detailTitle}> Mô tả hoa</Text>
@@ -104,4 +104,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProductDetail;
+export default DetailScreen;

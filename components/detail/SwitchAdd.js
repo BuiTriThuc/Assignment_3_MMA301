@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Switch, StyleSheet, Alert } from "react-native";
 
-const DropDownMenu = () => {
+const SwitchAdd = () => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => {
     setIsEnabled((previousState) => !previousState);
@@ -31,4 +31,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DropDownMenu;
+export default SwitchAdd;

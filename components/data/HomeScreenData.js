@@ -23,6 +23,7 @@ const HomeScreenData = [
     imgHoa: {
       uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqMVjN27pxUnWtBNebvFyNq2vggPP-6jtkmQ&usqp=CAU",
     },
+    favorite: false,
   },
   {
     id: 2,
@@ -47,6 +48,7 @@ const HomeScreenData = [
     imgHoa: {
       uri: "https://giathe.vn/wp-content/uploads/2021/08/gia-the-trong-lan-cattleya-5-e1628899424983.jpg",
     },
+    favorite: false,
   },
   {
     id: 3,
@@ -72,6 +74,7 @@ const HomeScreenData = [
     imgHoa: {
       uri: "https://sfarm.vn/wp-content/uploads/2021/11/cach-trong-va-cham-soc-lan-vu-nu-day-du-nhat.jpg",
     },
+    favorite: false,
   },
   {
     id: 4,
@@ -96,6 +99,7 @@ const HomeScreenData = [
     imgHoa: {
       uri: "https://hatgionggiadinh.com//wp-content/uploads/2017/12/lan-gia-hac-4.jpg.webp",
     },
+    favorite: false,
   },
 
   {
@@ -121,6 +125,7 @@ const HomeScreenData = [
     imgHoa: {
       uri: "https://vietflower.vn/wp-content/uploads/2017/02/hoa-lan-Mokara..jpg",
     },
+    favorite: false,
   },
   {
     id: 6,
@@ -145,6 +150,7 @@ const HomeScreenData = [
     imgHoa: {
       uri: "https://lantunhien.com/wp-content/uploads/2019/07/vu-lan-kiem.jpg",
     },
+    favorite: false,
   },
 ];
 export default HomeScreenData;
