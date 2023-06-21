@@ -32,7 +32,7 @@ const HomeScreenData = [
       uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Cattleya_mendelii_Orchi_143.jpg/1200px-Cattleya_mendelii_Orchi_143.jpg",
     },
     description:
-      "Lan phi điệp tím còn có tên gọi khác như: Giã hạc, giả hạc,... Có tên khoa học là Dendrobium Anosmum. Đây là một loài lan thuộc dòng dõi lan phi điệp, thuộc dòng lan Hoàng Thảo.",
+      "Lan phi điệp tím còn có tên gọi khác như: Giã hạc, giả hạc,... Có tên khoa học là Dendrobium Anosmum. Đây là một loài lan thuộc dòng dõi lan phi điệp.",
     descriptionThan:
       "Thân lan Cattleya có hình dạng đứng, thẳng và cứng. Thân lan thường không quá cao, thường chỉ khoảng 30-60 cm, tùy thuộc vào giống và cách trồng. ",
     imgThan: {
@@ -57,7 +57,7 @@ const HomeScreenData = [
       uri: "https://flowershop.com.vn/wp-content/uploads/2020/09/y-nghia-hoa-lan-vu-nu-5-min.jpg",
     },
     description:
-      "Hoa lan vũ nữ thuộc loài họ lan thân dài với các phiến lá nhọn màu xanh óng dài khoảng 15 đến 20 cm. Thân cây có phần cành vươn cao đến 70cm và gắn liền với chúng là các chùm hoa sắc màu tỏa hương thơm ngào ngạt.",
+      "Hoa lan vũ nữ thuộc loài họ lan thân dài với các phiến lá nhọn màu xanh óng dài khoảng 15 đến 20 cm. Thân cây có phần cành vươn cao đến 70cm.",
     descriptionThan:
       "Thân của lan vũ nữ có hình dạng ngắn, dày và thẳng đứng. Thân thường phát triển từ củ hoặc chồi và có khả năng chịu tải trọng của hoa và lá.",
 
@@ -83,7 +83,7 @@ const HomeScreenData = [
       uri: "https://product.hstatic.net/200000313485/product/phi_diep_bet_mat_nhung_tran_vien_7717967ec5eb4debb473116982329bd2_master.jpg",
     },
     description:
-      "Lan phi điệp tím còn có tên gọi khác như: Giã hạc, giả hạc,... Có tên khoa học là Dendrobium Anosmum. Đây là một loài lan thuộc dòng dõi lan phi điệp, thuộc dòng lan Hoàng Thảo.",
+      "Lan phi điệp tím còn có tên gọi khác như: Giã hạc, giả hạc,... Có tên khoa học là Dendrobium Anosmum. Đây là một loài lan thuộc dòng dõi lan phi điệp.",
     descriptionThan:
       "Cây lan phi điệp tím có thân rất dài, chiều cao trung bình khoảng 2m và ngọn cây mọc hướng xuống mặt đất. Thân lan tơ to bằng ngón tay út.",
     imgThan: {
@@ -109,7 +109,7 @@ const HomeScreenData = [
       uri: "https://sfarm.vn/wp-content/uploads/2015/01/hoa-phong-lan-mokara-4.jpg",
     },
     description:
-      "Hoa lan Mokara có hương thơm dịu nhẹ và thường nở từ mùa xuân đến mùa thu. Đây là một loài lan phổ biến và được ưa chuộng trong việc trang trí và trồng trong nhà, với vẻ đẹp và màu sắc tươi sáng.",
+      "Hoa lan Mokara có hương thơm dịu nhẹ và thường nở từ mùa xuân đến mùa thu. Đây là một loài lan phổ biến.",
     descriptionThan:
       "Thân của lan Mokara là dạng thân bò tròn, dài và thẳng đứng. Thân cây thường phát triển từ củ hoặc chồi và có khả năng chịu tải trọng của hoa và lá.",
     imgThan: {
@@ -134,7 +134,7 @@ const HomeScreenData = [
       uri: "https://vuonlan.com.vn/wp-content/uploads/2023/06/hoa-lan-kiem-rung-806.jpg",
     },
     description:
-      "Hoa lan kiếm có kích thước từ nhỏ đến trung bình, tùy thuộc vào giống. Cánh hoa thường có hình dạng tinh tế và mỏng như kiếm, từ đó nhận được tên gọi lan kiếm",
+      "Hoa lan kiếm có kích thước từ nhỏ đến trung bình, tùy thuộc vào giống. Cánh hoa thường có hình dạng tinh tế và mỏng như kiếm.",
     descriptionThan:
       "Thân của lan kiếm có hình dạng dẹp, dài và thẳng đứng. Thân thường phát triển từ củ hoặc chồi và có khả năng chịu tải trọng của hoa và lá. ",
     imgThan: {
