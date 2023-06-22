@@ -74,23 +74,25 @@ export default function Favourite({ navigation }) {
         renderItem={({ item }) => (
           <TouchableOpacity onPress={() => handlePress(item)}>
             <View style={styles.listItem}>
-              <ImageBackground
-                source={{ uri: item.image.uri }}
-                style={styles.imageBackground}
-              ></ImageBackground>
+              {item.image && item.image.uri ? (
+                <ImageBackground
+                  source={{ uri: item.image.uri }}
+                  style={styles.imageBackground}
+                ></ImageBackground>
+              ) : null}
               <View style={styles.namedesc}>
                 <Text style={styles.name}>{item.name}</Text>
                 <Text style={styles.desc}>{item.description}</Text>
               </View>
               <TouchableOpacity onPress={() => removeItem(item.id)}>
-                <FontAwesome name="trash" size={20} color="red" />
+                <FontAwesome name="trash" size={25} color="red" />
               </TouchableOpacity>
             </View>
           </TouchableOpacity>
         )}
         keyExtractor={(item) => item.id.toString()}
       />
-      <Button title="Remove All" onPress={removeAllItems} />
+      <Button width={40} title="Remove All" onPress={removeAllItems} />
     </View>
   );
 }
@@ -113,6 +115,7 @@ const styles = StyleSheet.create({
   },
   desc: {
     textAlign: "justify",
+    marginRight: 10,
   },
   screenempty: {
     flex: 1,

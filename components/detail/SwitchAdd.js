@@ -27,19 +27,14 @@ const SwitchAdd = ({ product }) => {
       const existingFavorites = await AsyncStorage.getItem("favorites");
 
       if (existingFavorites) {
-        // Parse the existing favorites from AsyncStorage
         favourites = JSON.parse(existingFavorites);
       }
 
-      // Check if the item already exists in favorites
       const isItemExist = favourites.some((fav) => fav.id === item.id);
 
       if (!isItemExist) {
-        // Add the item to favorites
         favourites.push(item);
-        // Save the updated favorites to AsyncStorage
         await AsyncStorage.setItem("favorites", JSON.stringify(favourites));
-        // Update the listFavourite state
         setListFavourite(favourites);
         console.log("Check list add", listFavourite);
       }
@@ -54,11 +49,9 @@ const SwitchAdd = ({ product }) => {
       const existingFavorites = await AsyncStorage.getItem("favorites");
 
       if (existingFavorites) {
-        // Parse the existing favorites from AsyncStorage
         favourites = JSON.parse(existingFavorites);
       }
 
-      // Check if the item already exists in favorites
       const isItemExist = favourites.some((fav) => fav.id === item.id);
 
       if (isItemExist) {
