@@ -23,7 +23,7 @@ const DetailScreen = ({ navigation, route }) => {
       <View style={styles.container}>
         <View style={[styles.productContainer]}>
           <Carosel />
-          <Button onPress={this.clearAsyncStorage} title="Thuc clasdsadsklj" />
+          {/* <Button onPress={this.clearAsyncStorage} title="Thuc clasdsadsklj" /> */}
           <View style={styles.DropDownMenu}>
             <Text style={styles.name}>{product.name} </Text>
             <SwitchAdd product={product} />

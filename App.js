@@ -32,7 +32,7 @@ export default function App() {
         })}
       >
         <Tab.Screen
-          name="Test"
+          name="Detail"
           component={StackNavigator}
           options={{ tabBarButton: () => null }}
         />
