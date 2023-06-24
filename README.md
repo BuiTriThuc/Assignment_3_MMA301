@@ -4,9 +4,11 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-[![Product Name Screen Shot][product-screenshot1]](https://example.com)
-[![Product Name Screen Shot][product-screenshot2]](https://example.com)
+<div style="display: flex; justify-content: space-between;">
+    <img src="images/Screenshot_1687615719.png" alt="Product Screenshot" style="width: 30%;">
+    <img src="images/Screenshot_1687615734.png" alt="Product Screenshot" style="width: 30%;">
+    <img src="images/Screenshot_1687615742.png" alt="Product Screenshot" style="width: 30%;">
+</div>
 
 [product-screenshot]: images/Screenshot_1687615719.png
 [product-screenshot1]: images/Screenshot_1687615734.png
