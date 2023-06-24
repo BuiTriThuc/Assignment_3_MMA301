@@ -7,6 +7,7 @@ import {
   ImageBackground,
   TouchableOpacity,
   Button,
+  Alert,
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useIsFocused } from "@react-navigation/native";
@@ -34,25 +35,56 @@ export default function Favourite({ navigation }) {
     }
   };
 
-  const removeItem = async (itemId) => {
-    try {
-      const updatedFavorites = listFavourite.filter(
-        (item) => item.id !== itemId
-      );
-      await AsyncStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-      setListFavourite(updatedFavorites);
-    } catch (error) {
-      console.log(error);
-    }
+  const removeItem = (itemId) => {
+    Alert.alert("Remove Item", "Are you sure you want to remove this item?", [
+      {
+        text: "Cancel",
+        style: "cancel",
+      },
+      {
+        text: "Remove",
+        style: "destructive",
+        onPress: async () => {
+          try {
+            const updatedFavorites = listFavourite.filter(
+              (item) => item.id !== itemId
+            );
+            await AsyncStorage.setItem(
+              "favorites",
+              JSON.stringify(updatedFavorites)
+            );
+            setListFavourite(updatedFavorites);
+          } catch (error) {
+            console.log(error);
+          }
+        },
+      },
+    ]);
   };
 
-  const removeAllItems = async () => {
-    try {
-      await AsyncStorage.removeItem("favorites");
-      setListFavourite([]);
-    } catch (error) {
-      console.log(error);
-    }
+  const removeAllItems = () => {
+    Alert.alert(
+      "Remove All Items",
+      "Are you sure you want to remove all items?",
+      [
+        {
+          text: "Cancel",
+          style: "cancel",
+        },
+        {
+          text: "Remove",
+          style: "destructive",
+          onPress: async () => {
+            try {
+              await AsyncStorage.removeItem("favorites");
+              setListFavourite([]);
+            } catch (error) {
+              console.log(error);
+            }
+          },
+        },
+      ]
+    );
   };
 
   useEffect(() => {

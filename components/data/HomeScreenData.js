@@ -121,7 +121,7 @@ const HomeScreenData = [
       uri: "https://vn-live-01.slatic.net/p/90694d75555df3906bf868f869833d0b.jpg",
     },
     descriptionHoa:
-      "Lá của lan Mokara có hình dáng dẹp và hẹp, hình dạng lưỡi liềm và có thể dài từ 15 đến 30 cm. ",
+      "hoa có 5 cánh đa dạng màu sắc từ tím, đỏ, hồng, cam đến lan mokara vàng, rất bắt mắt.",
     imgHoa: {
       uri: "https://vietflower.vn/wp-content/uploads/2017/02/hoa-lan-Mokara..jpg",
     },

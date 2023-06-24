@@ -31,7 +31,12 @@ export default function App() {
           tabBarLabel: () => null, // Hide the tab bar labels
         })}
       >
-        <Tab.Screen name="Home" component={StackNavigator} />
+        <Tab.Screen
+          name="Test"
+          component={StackNavigator}
+          options={{ tabBarButton: () => null }}
+        />
+        <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Favorite" component={FavoriteScreen} />
       </Tab.Navigator>
     </NavigationContainer>
