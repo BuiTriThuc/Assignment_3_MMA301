@@ -5,8 +5,8 @@
 ## About The Project
 
 <div style="display: flex; justify-content: space-around;">
-    <img src="images/Screenshot_1687615719.png" alt="Product Screenshot" style="width: 30%;">
-    <img src="images/Screenshot_1687615734.png" alt="Product Screenshot" style="width: 30%;">
+    <img src="images/Screenshot_1687615719.png" alt="Product Screenshot" style="width: 30%; margin-right: 20px;">
+    <img src="images/Screenshot_1687615734.png" alt="Product Screenshot" style="width: 30%; margin-right: 20px;">
     <img src="images/Screenshot_1687615742.png" alt="Product Screenshot" style="width: 30%;">
 </div>
 
