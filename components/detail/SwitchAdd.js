@@ -59,15 +59,26 @@ const SwitchAdd = ({ product }) => {
         await AsyncStorage.setItem("favorites", JSON.stringify(updatedList));
         setListFavourite(updatedList);
         console.log("Check list remove: ", listFavourite);
+
+        if (item.id === product.id) {
+          setIsEnabled(false); // Update the switch to be disabled (false)
+        }
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
     getFavouriteList();
   }, []);
 
-  console.log("check list favourite: ", listFavourite);
+  useEffect(() => {
+    const isProductInFavorites = listFavourite.some(
+      (fav) => fav.id === product.id
+    );
+    setIsEnabled(isProductInFavorites);
+  }, [listFavourite, product]);
 
   const toggleSwitch = () => {
     setIsEnabled((previousState) => !previousState);
