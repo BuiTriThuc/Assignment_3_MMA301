@@ -76,7 +76,7 @@ export default function Favourite({ navigation }) {
           style: "destructive",
           onPress: async () => {
             try {
-              await AsyncStorage.removeItem("favorites");
+              await AsyncStorage.clear();
               setListFavourite([]);
             } catch (error) {
               console.log(error);

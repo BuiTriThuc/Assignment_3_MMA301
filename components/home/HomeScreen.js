@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   ScrollView,
   StyleSheet,
@@ -9,18 +9,58 @@ import {
   TouchableOpacity,
 } from "react-native";
 import HomeScreenData from "../data/HomeScreenData";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
 
 export default function HomeScreen({ navigation }) {
   const windowWidth = Dimensions.get("window").width;
+  const [listFavourite, setListFavourite] = useState([]);
+  const [data, setData] = useState([]);
 
   const handlePress = (product) => {
     navigation.navigate("DetailScreen", { product });
   };
 
+  const getFavouriteList = async () => {
+    try {
+      // Get favorites from AsyncStorage
+      const favorites = await AsyncStorage.getItem("favorites");
+      if (favorites) {
+        // Parse the favorites from AsyncStorage
+        const parsedFavorites = JSON.parse(favorites);
+
+        // Update the listFavourite state
+        setListFavourite(parsedFavorites);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getFavouriteList();
+  }, []);
+
+  useFocusEffect(
+    React.useCallback(() => {
+      const updatedData = () => {
+        const updatedData = HomeScreenData.map((item) => ({
+          ...item,
+          favorite: listFavourite.some((fav) => fav.id === item.id),
+        }));
+        setData(updatedData);
+      };
+
+      updatedData();
+    }, [listFavourite])
+  );
+
+  console.log("Check list", data);
+
   return (
     <ScrollView>
       <View style={styles.container}>
-        {HomeScreenData.map((product) => (
+        {data.map((product) => (
           <TouchableOpacity
             key={product.id}
             style={[styles.productContainer, { width: windowWidth / 2 - 20 }]}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   View,
   Text,
@@ -11,8 +11,10 @@ import DetailSuggest from "../detail/DetailSuggest";
 import Carosel from "../detail/Carosel";
 import SwitchAdd from "./SwitchAdd";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import HomeScreenData from "../data/HomeScreenData";
+
 const DetailScreen = ({ navigation, route }) => {
-  const { product } = route.params;
+  let { product } = route.params;
 
   clearAsyncStorage = async () => {
     AsyncStorage.clear();

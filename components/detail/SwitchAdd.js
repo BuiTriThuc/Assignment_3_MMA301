@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { View, Switch, StyleSheet, Alert } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import HomeScreenData from "../data/HomeScreenData";
 
 const SwitchAdd = ({ product }) => {
   const [isEnabled, setIsEnabled] = useState(false);
   const [listFavourite, setListFavourite] = useState([]);
+
+  console.log("Check product", product.favorite);
 
   const getFavouriteList = async () => {
     try {
@@ -13,6 +16,7 @@ const SwitchAdd = ({ product }) => {
       if (favorites) {
         // Parse the favorites from AsyncStorage
         const parsedFavorites = JSON.parse(favorites);
+
         // Update the listFavourite state
         setListFavourite(parsedFavorites);
       }
@@ -36,7 +40,14 @@ const SwitchAdd = ({ product }) => {
         favourites.push(item);
         await AsyncStorage.setItem("favorites", JSON.stringify(favourites));
         setListFavourite(favourites);
+        setIsEnabled(true);
         console.log("Check list add", listFavourite);
+      } else {
+        const updatedList = listFavourite.filter((fav) => fav.id !== item.id);
+        await AsyncStorage.setItem("favorites", JSON.stringify(updatedList));
+        setListFavourite(updatedList);
+        setIsEnabled(false);
+        console.log("Check list remove: ", listFavourite);
       }
     } catch (error) {
       console.log(error);
@@ -71,14 +82,8 @@ const SwitchAdd = ({ product }) => {
 
   useEffect(() => {
     getFavouriteList();
+    console.log("Check list favorite", listFavourite);
   }, []);
-
-  useEffect(() => {
-    const isProductInFavorites = listFavourite.some(
-      (fav) => fav.id === product.id
-    );
-    setIsEnabled(isProductInFavorites);
-  }, [listFavourite, product]);
 
   const toggleSwitch = () => {
     setIsEnabled((previousState) => !previousState);
@@ -86,7 +91,7 @@ const SwitchAdd = ({ product }) => {
       addItemFavourite(product);
       // Alert.alert("Thích", "Đã thêm vào danh sách yêu thích");
     } else {
-      deleteItemFavourite(product);
+      addItemFavourite(product);
       // Alert.alert("!Thích", "Đã xóa khỏi danh sách yêu thích");
     }
   };
