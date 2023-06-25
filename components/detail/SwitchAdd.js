@@ -2,12 +2,23 @@ import React, { useEffect, useState } from "react";
 import { View, Switch, StyleSheet, Alert } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import HomeScreenData from "../data/HomeScreenData";
+import { useFocusEffect } from "@react-navigation/native";
 
-const SwitchAdd = ({ product }) => {
+const SwitchAdd = ({ product, route }) => {
   const [isEnabled, setIsEnabled] = useState(false);
   const [listFavourite, setListFavourite] = useState([]);
 
-  console.log("Check product", product.favorite);
+  useFocusEffect(
+    React.useCallback(() => {
+      const updateIsEnabled = () => {
+        let { product } = route.params;
+        console.log("check product", product.favorite);
+        setIsEnabled(product.favorite);
+      };
+
+      updateIsEnabled();
+    }, [route.params])
+  );
 
   const getFavouriteList = async () => {
     try {

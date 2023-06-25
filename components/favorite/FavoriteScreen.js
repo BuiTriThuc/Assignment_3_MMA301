@@ -10,13 +10,13 @@ import {
   Alert,
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useIsFocused } from "@react-navigation/native";
+import { useFocusEffect, useIsFocused } from "@react-navigation/native";
 import { FontAwesome } from "@expo/vector-icons";
+import HomeScreenData from "./../data/HomeScreenData";
 
 export default function Favourite({ navigation }) {
   const [listFavourite, setListFavourite] = useState([]);
-  const [selectedItems, setSelectedItems] = useState([]);
-  const isCheckboxChecked = selectedItems.length > 0;
+  const [dataItem, setDataItem] = useState([]);
   const isFocused = useIsFocused();
 
   const handlePress = (product) => {
@@ -30,6 +30,16 @@ export default function Favourite({ navigation }) {
         const parsedFavorites = JSON.parse(favorites);
         setListFavourite(parsedFavorites);
       }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const deleteAllItem = async () => {
+    try {
+      const updatedList = [];
+      await AsyncStorage.setItem("favorites", JSON.stringify(updatedList));
+      setListFavourite([]);
     } catch (error) {
       console.log(error);
     }
@@ -74,14 +84,7 @@ export default function Favourite({ navigation }) {
         {
           text: "Remove",
           style: "destructive",
-          onPress: async () => {
-            try {
-              await AsyncStorage.clear();
-              setListFavourite([]);
-            } catch (error) {
-              console.log(error);
-            }
-          },
+          onPress: () => deleteAllItem(),
         },
       ]
     );
@@ -91,7 +94,23 @@ export default function Favourite({ navigation }) {
     getFavouriteList();
   }, [isFocused]);
 
-  if (listFavourite.length === 0) {
+  useFocusEffect(
+    React.useCallback(() => {
+      const updatedData = () => {
+        const updatedData = listFavourite.map((item) => ({
+          ...item,
+          favorite: listFavourite.some((fav) => fav.id === item.id),
+        }));
+        setDataItem(updatedData);
+      };
+
+      updatedData();
+    }, [listFavourite])
+  );
+
+  console.log("List favorite", listFavourite);
+
+  if (dataItem.length === 0) {
     return (
       <View style={styles.screenempty}>
         <Text style={styles.textNot}>Your favorites list is empty</Text>
@@ -102,7 +121,7 @@ export default function Favourite({ navigation }) {
   return (
     <View style={styles.container}>
       <FlatList
-        data={listFavourite}
+        data={dataItem}
         renderItem={({ item }) => (
           <TouchableOpacity onPress={() => handlePress(item)}>
             <View style={styles.listItem}>

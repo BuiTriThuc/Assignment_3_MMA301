@@ -10,12 +10,17 @@ import {
 } from "react-native";
 import HomeScreenData from "../data/HomeScreenData";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useFocusEffect, useNavigation } from "@react-navigation/native";
+import {
+  useFocusEffect,
+  useIsFocused,
+  useNavigation,
+} from "@react-navigation/native";
 
 export default function HomeScreen({ navigation }) {
   const windowWidth = Dimensions.get("window").width;
   const [listFavourite, setListFavourite] = useState([]);
   const [data, setData] = useState([]);
+  const isFocused = useIsFocused();
 
   const handlePress = (product) => {
     navigation.navigate("DetailScreen", { product });
@@ -41,6 +46,10 @@ export default function HomeScreen({ navigation }) {
     getFavouriteList();
   }, []);
 
+  useEffect(() => {
+    getFavouriteList();
+  }, [isFocused]);
+
   useFocusEffect(
     React.useCallback(() => {
       const updatedData = () => {
@@ -54,8 +63,6 @@ export default function HomeScreen({ navigation }) {
       updatedData();
     }, [listFavourite])
   );
-
-  console.log("Check list", data);
 
   return (
     <ScrollView>

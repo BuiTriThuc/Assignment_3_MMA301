@@ -11,12 +11,11 @@ import DetailSuggest from "../detail/DetailSuggest";
 import Carosel from "../detail/Carosel";
 import SwitchAdd from "./SwitchAdd";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import HomeScreenData from "../data/HomeScreenData";
 
 const DetailScreen = ({ navigation, route }) => {
   let { product } = route.params;
 
-  clearAsyncStorage = async () => {
+  const clearAsyncStorage = async () => {
     AsyncStorage.clear();
   };
 
@@ -25,10 +24,10 @@ const DetailScreen = ({ navigation, route }) => {
       <View style={styles.container}>
         <View style={[styles.productContainer]}>
           <Carosel />
-          {/* <Button onPress={this.clearAsyncStorage} title="Thuc clasdsadsklj" /> */}
+          <Button onPress={clearAsyncStorage} title="Thuc clasdsadsklj" />
           <View style={styles.DropDownMenu}>
             <Text style={styles.name}>{product.name} </Text>
-            <SwitchAdd product={product} />
+            <SwitchAdd product={product} route={route} />
           </View>
 
           <Text style={styles.detailTitle}> Mô tả hoa</Text>
