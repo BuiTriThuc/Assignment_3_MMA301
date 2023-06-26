@@ -8,17 +8,30 @@ const SwitchAdd = ({ product, route }) => {
   const [isEnabled, setIsEnabled] = useState(false);
   const [listFavourite, setListFavourite] = useState([]);
 
-  useFocusEffect(
-    React.useCallback(() => {
-      const updateIsEnabled = () => {
-        let { product } = route.params;
-        console.log("check product", product.favorite);
-        setIsEnabled(product.favorite);
-      };
+  useFocusEffect(() => {
+    const checkIsFavorite = async (productId) => {
+      // Replace with your logic to check if the product is a favorite
+      // For example, you can use AsyncStorage to check if the product exists in favorites
+      try {
+        const favorites = await AsyncStorage.getItem("favorites");
+        if (favorites) {
+          const parsedFavorites = JSON.parse(favorites);
+          return parsedFavorites.some((fav) => fav.id === productId);
+        }
+        return false;
+      } catch (error) {
+        console.log(error);
+        return false;
+      }
+    };
 
-      updateIsEnabled();
-    }, [route.params])
-  );
+    const fetchData = async () => {
+      const isProductFavorite = await checkIsFavorite(product.id);
+      setIsEnabled(isProductFavorite);
+    };
+
+    fetchData();
+  });
 
   const getFavouriteList = async () => {
     try {
@@ -59,32 +72,6 @@ const SwitchAdd = ({ product, route }) => {
         setListFavourite(updatedList);
         setIsEnabled(false);
         console.log("Check list remove: ", listFavourite);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const deleteItemFavourite = async (item) => {
-    try {
-      let favourites = [...listFavourite];
-      const existingFavorites = await AsyncStorage.getItem("favorites");
-
-      if (existingFavorites) {
-        favourites = JSON.parse(existingFavorites);
-      }
-
-      const isItemExist = favourites.some((fav) => fav.id === item.id);
-
-      if (isItemExist) {
-        const updatedList = listFavourite.filter((fav) => fav.id !== item.id);
-        await AsyncStorage.setItem("favorites", JSON.stringify(updatedList));
-        setListFavourite(updatedList);
-        console.log("Check list remove: ", listFavourite);
-
-        if (item.id === product.id) {
-          setIsEnabled(false); // Update the switch to be disabled (false)
-        }
       }
     } catch (error) {
       console.log(error);
