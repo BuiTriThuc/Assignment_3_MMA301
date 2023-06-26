@@ -46,36 +46,40 @@ export default function Favourite({ navigation }) {
   };
 
   const removeItem = (itemId) => {
-    Alert.alert("Remove Item", "Are you sure you want to remove this item?", [
-      {
-        text: "Cancel",
-        style: "cancel",
-      },
-      {
-        text: "Remove",
-        style: "destructive",
-        onPress: async () => {
-          try {
-            const updatedFavorites = listFavourite.filter(
-              (item) => item.id !== itemId
-            );
-            await AsyncStorage.setItem(
-              "favorites",
-              JSON.stringify(updatedFavorites)
-            );
-            setListFavourite(updatedFavorites);
-          } catch (error) {
-            console.log(error);
-          }
+    Alert.alert(
+      "Remove Orchid",
+      "Are you sure you want to remove this Orchid?",
+      [
+        {
+          text: "Cancel",
+          style: "cancel",
         },
-      },
-    ]);
+        {
+          text: "Remove",
+          style: "destructive",
+          onPress: async () => {
+            try {
+              const updatedFavorites = listFavourite.filter(
+                (item) => item.id !== itemId
+              );
+              await AsyncStorage.setItem(
+                "favorites",
+                JSON.stringify(updatedFavorites)
+              );
+              setListFavourite(updatedFavorites);
+            } catch (error) {
+              console.log(error);
+            }
+          },
+        },
+      ]
+    );
   };
 
   const removeAllItems = () => {
     Alert.alert(
-      "Remove All Items",
-      "Are you sure you want to remove all items?",
+      "Remove All Orchid",
+      "Are you sure you want to remove all Orchid?",
       [
         {
           text: "Cancel",

@@ -8,7 +8,7 @@ const HomeScreenData = [
     description:
       "Lan hồ điệp là loài cây thân thảo, sống lâu năm, bám vào các loại thân cây, chiều cao khoảng 30-70 cm.",
     descriptionThan:
-      " Thân lan Hồ Điệp bao gồm một chuỗi các mấu, gọi là nốt hoặc khúc. Mỗi khúc thường chứa một hoặc nhiều lá và một bông hoa.",
+      "Thân lan Hồ Điệp bao gồm một chuỗi các mấu, gọi là nốt hoặc khúc. Mỗi khúc thường chứa một hoặc nhiều lá và một bông hoa.",
     imgThan: {
       uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeY83UVwiHJTqt_kGeOUeMLQtHIYoeQlg8Zw&usqp=CAU",
     },
@@ -32,7 +32,7 @@ const HomeScreenData = [
       uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Cattleya_mendelii_Orchi_143.jpg/1200px-Cattleya_mendelii_Orchi_143.jpg",
     },
     description:
-      "Lan phi điệp tím còn có tên gọi khác như: Giã hạc, giả hạc,... Có tên khoa học là Dendrobium Anosmum. Đây là một loài lan thuộc dòng dõi lan phi điệp.",
+      "Lan Cattleya hay còn gọi là cát lan, một trong những loài lan đa thân. Từ thân cây mập mạp và những chiếc lá xanh lóe lên những bông hoa rất to với đường kính khoảng 15 – 20 cm.",
     descriptionThan:
       "Thân lan Cattleya có hình dạng đứng, thẳng và cứng. Thân lan thường không quá cao, thường chỉ khoảng 30-60 cm, tùy thuộc vào giống và cách trồng. ",
     imgThan: {
@@ -121,7 +121,7 @@ const HomeScreenData = [
       uri: "https://vn-live-01.slatic.net/p/90694d75555df3906bf868f869833d0b.jpg",
     },
     descriptionHoa:
-      "hoa có 5 cánh đa dạng màu sắc từ tím, đỏ, hồng, cam đến lan mokara vàng, rất bắt mắt.",
+      "Hoa có 5 cánh đa dạng màu sắc từ tím, đỏ, hồng, cam đến lan mokara vàng, rất bắt mắt. Nếu chăm sóc tốt, hoa có thể ra quanh năm",
     imgHoa: {
       uri: "https://vietflower.vn/wp-content/uploads/2017/02/hoa-lan-Mokara..jpg",
     },

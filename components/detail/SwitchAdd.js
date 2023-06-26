@@ -87,7 +87,7 @@ const SwitchAdd = ({ product, route }) => {
     setIsEnabled((previousState) => !previousState);
     if (!isEnabled) {
       addItemFavourite(product);
-      // Alert.alert("Thích", "Đã thêm vào danh sách yêu thích");
+      Alert.alert("Thích", "Đã thêm vào danh sách yêu thích");
     } else {
       addItemFavourite(product);
       // Alert.alert("!Thích", "Đã xóa khỏi danh sách yêu thích");
