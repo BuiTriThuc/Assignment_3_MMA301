@@ -10,11 +10,7 @@ import {
 } from "react-native";
 import HomeScreenData from "../data/HomeScreenData";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {
-  useFocusEffect,
-  useIsFocused,
-  useNavigation,
-} from "@react-navigation/native";
+import { useFocusEffect, useIsFocused } from "@react-navigation/native";
 
 export default function HomeScreen({ navigation }) {
   const windowWidth = Dimensions.get("window").width;

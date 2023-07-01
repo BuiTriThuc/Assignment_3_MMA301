@@ -3,8 +3,7 @@ import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons } from "@expo/vector-icons"; // Import the desired icon library
-
+import { Ionicons } from "@expo/vector-icons";
 import HomeScreen from "./components/home/HomeScreen";
 import FavoriteScreen from "./components/favorite/FavoriteScreen";
 import StackNavigator from "./components/Stack/Stack";
@@ -21,14 +20,14 @@ export default function App() {
             let iconName;
 
             if (route.name === "Home") {
-              iconName = "home"; // Icon for the Home screen
+              iconName = "home";
             } else if (route.name === "Favorite") {
-              iconName = "heart"; // Icon for the Favorite screen
+              iconName = "heart";
             }
 
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-          tabBarLabel: () => null, // Hide the tab bar labels
+          tabBarLabel: () => null,
         })}
       >
         <Tab.Screen
